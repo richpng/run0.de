@@ -1,0 +1,36 @@
+<head></head>
+
+<body>
+
+<h1>run0</h1>
+
+<h2>Was ist run0?</h2>
+<p>Run0 ist eine moderne Alternative zum altbekannten "sudo" (super user do) Befehl.</br>
+Wie auch sudo können mit "run0" Programme mit priviligierten Rechten (root) ausgeführt werden.
+
+<h2>Warum braucht es run0?</h2>
+<p>
+Anders als "sudo" nutzt run0 zur Ausführung als root Benutzer nicht den "Set User ID" (SUID) Mechanismus von Linux im bestehenden Kontext des Benutzers. Dieses Szenario birgt nämlich ein grundlegendes Sicherheitsrisiko, welches eintritt, wenn es einem Angreifer gelingt, das mit sudo ausgefürte Programm zu übernehmen. In diesem Fall opertiert der Angreifer dann mit den höchsten Rechten des Systems und kann dieses im schlechtesten Fall vollständig unter sein Kontrolle bringen.
+</br></br>
+Run0 führt das entsprechende Programm stattdessen als Prozess in einem temporär erstellten systemd service aus, was die Möglichkeiten für eine priviligierete Übernahme stark reduziert.
+</p>
+
+
+<h2>Wie nutze ich run0?</h2>
+<p>
+Run0 basiert auf systemd. Genauer gesagt handelt es sich dabei lediglich um einen mit der Version 256 eingeführten Link auf das schon lange existierende "systemd-run". Um zu prüfen ob das eigene System run0 unterstützt, kann das Kommando "systemctl --version" genutzt werden. Ist die Version größergleich 256 ist run0 nativ verfügbar.
+</br></br>
+Die Ausführung eines Programms kann dann analog des sudo Kommandos erfolgen.</br></br>
+run0 &lt;Programm&gt;
+</br></br>
+Nach Eingabe des Nutzerpassworts wird das jeweilige Progamm als root Benuters ausgeführt. Um dies visuell hervorzuheben wird der Hintergrund des Terminals rot eingefärbt.
+</br></br>
+&gt; run0 whoami
+</br>
+root
+
+</p>
+<h2>Wie erfahre ich mehr über run0?</h2>
+<p>
+Die vermutlich beste Quelle für mehr Infos zu den Hintergründen und Verwendung von run0 ist wie so oft die zugehörige Manpage des Progamms - aufrufbar mittels "man run0".
+</body>
