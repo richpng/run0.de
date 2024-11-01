@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style> 
 body {font-family: Arial, Helvetica, sans-serif;}
-p {font-size: 1.5em;}
+p {font-size: 1.2em;}
 </style>
 </head>
 
@@ -22,8 +22,8 @@ p {font-size: 1.5em;}
 
 <h2>Warum braucht es run0?</h2>
 <p>
-	Anders als "sudo" nutzt run0 zur Ausf&#252;hrung als root Benutzer jedoch nicht den "Set User ID" (SUID) Mechanismus von Linux im bestehenden Kontext des Benutzers.<br>
-	Dieses Szenario birgt ein grundlegendes Sicherheitsrisiko, welches eintritt, wenn es einem Angreifer gelingt, das mit sudo ausgef&#252;rte Programm zu &#252;bernehmen.<br>
+	Anders als "sudo" nutzt run0 zur Ausf&#252;hrung als root Benutzer nicht den "Set User ID" (SUID) Mechanismus von Linux im bestehenden Kontext des Benutzers.<br>
+	Dieser birgt ein grundlegendes Sicherheitsrisiko, welches eintritt, wenn es einem Angreifer gelingt, das mit sudo ausgef&#252;rte Programm zu &#252;bernehmen.<br>
 	In diesem Fall opertiert der Angreifer dann mit den h&#246;chsten Rechten des Systems und kann dieses im schlechtesten Fall vollst&#228;ndig unter sein Kontrolle bringen.<br>
 	<br>
 	Run0 f&#252;hrt das entsprechende Programm stattdessen als Prozess in einem tempo&#228;r erstellten systemd service aus, was die M&#246;glichkeiten des Angreifers im Falle einer &#220;ernahme stark reduziert.
@@ -48,7 +48,7 @@ p {font-size: 1.5em;}
 
 <h2>Wie erfahre ich mehr &#252ber run0?</h2>
 <p>
-	Die vermutlich beste Quelle f&#252;r mehr Infos zu den Hintergr&#252;nden und Verwendung von run0 ist wie so oft die zugeh&#246;rige Manpage des Progamms :-) ...aufrufbar mit "man run0".
+Die vermutlich beste Quelle f&#252;r mehr Infos zu den Hintergr&#252;nden und Verwendung von run0 ist wie so oft die zugeh&#246;rige Manpage des Progamms :-) ...aufrufbar mit "man run0" oder <a href="/manual.txt"> hier</a>.
 </p>
 </body>
 <footer>
