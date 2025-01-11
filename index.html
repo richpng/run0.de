@@ -25,7 +25,7 @@ p {font-size: 1.2em;}
 <h2>Warum braucht es run0?</h2>
 <p>
 	Anders als "sudo" nutzt run0 zur Ausf&#252;hrung als root Benutzer nicht den "Set User ID" (SUID) Mechanismus von Linux im bestehenden Kontext des Benutzers.<br>
-	Dieser bringt eine erh√hte Angriffsoberfl&#228;che zur &#220;bernahme des Systems durch unauthorisierte Berechtigungseskalation mit sich (siehe z.B. CVE-2021-3156). 
+	Dieser bringt eine erh&#246;te Angriffsoberfl&#228;che zur &#220;bernahme des Systems durch unauthorisierte Berechtigungseskalation mit sich (siehe z.B. CVE-2021-3156). 
 	<br>
 	Run0 f&#252;hrt das entsprechende Programm stattdessen als Prozess in einem tempo&#228;r erstellten systemd service ohne Benutzerkontext aus, was die m&#246;glichen Angriffsvektoren reduzuiert und so zur Sicherheit des Systems beitr&#228;gt. 
 </p>
